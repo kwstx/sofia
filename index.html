@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOFIA | The Global Luxury Trading Platform</title>
+  <meta name="description" content="The all-in-one platform for professional watch dealers — with verified market intelligence, a trusted dealer network, and seamless trading tools.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Full Landing Container -->
+  <div class="landing-wrapper" id="landingWrapper">
+
+    <!-- Background Image Container (Layered Underneath All Content) -->
+    <div class="hero-bg" aria-hidden="true">
+      <img src="sofia-clean-bg.jpg" alt="Rolex Daytona Chronograph on Marble Plinth" class="bg-img">
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <header class="sofia-header">
+      <div class="header-inner">
+        <!-- Logo Left -->
+        <a href="#home" class="sofia-logo" aria-label="SOFIA">
+          <img src="logo-sofia.png" alt="SOFIA" class="logo-img">
+          <span class="sr-only">SOFIA</span>
+        </a>
+
+        <!-- Center Nav Items -->
+        <nav class="sofia-nav" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li class="nav-item has-dropdown">
+              <button class="nav-link" type="button" aria-expanded="false">
+                Products
+                <svg class="chevron-icon" width="7" height="4" viewBox="0 0 7 4" fill="none">
+                  <path d="M1 1L3.5 3L6 1" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="dropdown-menu">
+                <a href="#inventory" class="dropdown-item">Dealer Inventory Exchange</a>
+                <a href="#terminal" class="dropdown-item">Trading Terminal & Orderbook</a>
+                <a href="#indexes" class="dropdown-item">Watch Market Intelligence</a>
+                <a href="#escrow" class="dropdown-item">Verified Escrow & Logistics</a>
+              </div>
+            </li>
+
+            <li class="nav-item has-dropdown">
+              <button class="nav-link" type="button" aria-expanded="false">
+                Solutions
+                <svg class="chevron-icon" width="7" height="4" viewBox="0 0 7 4" fill="none">
+                  <path d="M1 1L3.5 3L6 1" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="dropdown-menu">
+                <a href="#dealers" class="dropdown-item">Independent Watch Dealers</a>
+                <a href="#boutiques" class="dropdown-item">Luxury Retailers & Showrooms</a>
+                <a href="#institutions" class="dropdown-item">Trading Desks & Funds</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a href="#network" class="nav-link">Network</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#insights" class="nav-link">Insights</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#about" class="nav-link">About</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Right Header Action Button -->
+        <div class="header-action">
+          <button type="button" class="btn-top-access" id="btnTopAccess">Request Access</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero-section" id="home">
+      <!-- Hero Left Content -->
+      <div class="hero-content">
+        <!-- Eyebrow Tag -->
+        <p class="hero-eyebrow">THE GLOBAL LUXURY TRADING PLATFORM</p>
+
+        <!-- Accent Line -->
+        <div class="hero-accent-line" aria-hidden="true"></div>
+
+        <!-- Headline -->
+        <h1 class="hero-headline">
+          <span class="headline-row">Trade Smarter.</span>
+          <span class="headline-row">Grow Stronger.</span>
+        </h1>
+
+        <!-- Subtitle Paragraph -->
+        <p class="hero-subtitle">
+          The all-in-one platform for professional watch dealers —<br>
+          with verified market intelligence, a trusted dealer network,<br>
+          and seamless trading tools.
+        </p>
+
+        <!-- Hero Primary Action Button -->
+        <div class="hero-action">
+          <button type="button" class="btn-hero-access" id="btnHeroAccess">
+            <span>Request Access</span>
+            <svg class="arrow-icon" width="15" height="11" viewBox="0 0 13 9" fill="none">
+              <path d="M1 4.5H11.5M8 1L11.5 4.5L8 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Request Access Modal -->
+  <div class="modal-backdrop" id="accessModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">&times;</button>
+      <div class="modal-header">
+        <span class="modal-eyebrow">EXCLUSIVE DEALER NETWORK</span>
+        <h2 class="modal-title" id="modalTitle">Request Platform Access</h2>
+        <p class="modal-desc">Sofia connects vetted watch dealers, retailers, and private trading desks globally.</p>
+      </div>
+
+      <form class="modal-form" id="accessForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="e.g. Alexander Vance" required>
+          </div>
+          <div class="form-group">
+            <label for="dealershipName">Dealership / Company</label>
+            <input type="text" id="dealershipName" name="dealershipName" placeholder="e.g. Vance Chronometry" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="workEmail">Business Email</label>
+            <input type="email" id="workEmail" name="workEmail" placeholder="dealer@vancechrono.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">WhatsApp / Phone</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+1 (555) 019-2834" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="volumeTier">Annual Trading Volume</label>
+          <select id="volumeTier" name="volumeTier">
+            <option value="500k-2m">$500,000 – $2,000,000 USD</option>
+            <option value="2m-10m" selected>$2,000,000 – $10,000,000 USD</option>
+            <option value="10m-50m">$10,000,000 – $50,000,000 USD</option>
+            <option value="50m+">$50,000,000+ USD (Institutional)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="primaryBrands">Primary Specialization</label>
+          <input type="text" id="primaryBrands" name="primaryBrands" placeholder="e.g. Rolex Daytona, Patek Philippe Nautilus, Audemars Piguet">
+        </div>
+
+        <button type="submit" class="modal-submit-btn">
+          <span>Submit Dealer Application</span>
+          <svg width="13" height="9" viewBox="0 0 13 9" fill="none">
+            <path d="M1 4.5H11.5M8 1L11.5 4.5L8 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+
+      <div class="modal-footer-note">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span>Sofia adheres to strict institutional AML/KYC vetting protocols.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-message" id="toastMessage" role="status" aria-live="polite">
+    Application received. A Sofia partner director will contact you within 24 hours.
+  </div>
+
+  <!-- Subtle Pixel-Comparison Toggle (bottom-right) -->
+  <div class="pixel-diff-control" id="pixelDiffControl">
+    <button type="button" class="diff-toggle-btn" id="diffToggleBtn" title="Toggle 50% Reference Overlay to verify pixel perfection (Hotkey: O)">
+      <span>Compare Overlay</span>
+      <span class="diff-badge" id="diffBadge">Off</span>
+    </button>
+  </div>
+  <div class="reference-overlay" id="referenceOverlay" aria-hidden="true">
+    <img src="landing-reference.jpg" alt="Pixel Perfect Reference" class="overlay-img">
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

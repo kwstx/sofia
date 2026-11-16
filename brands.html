@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Watch Brands | Sofia Luxury Marketplace</title>
+  <meta name="description" content="Explore certified pre-owned and unworn timepieces from Rolex, Patek Philippe, Audemars Piguet, Cartier, Omega, IWC, and Vacheron Constantin.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Brands Page Specific Enhancements */
+    .brands-page-hero {
+      background: radial-gradient(circle at 50% 20%, #1c1611 0%, #0a0806 80%);
+      padding: 60px 20px 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .brands-page-tag {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold-accent);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .brands-page-title {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 400;
+      color: var(--text-ivory);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .brands-page-desc {
+      font-size: 14px;
+      color: var(--text-taupe);
+      max-width: 640px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
+    /* Master Pixel-Perfect Bar Section */
+    .pixel-showcase-section {
+      background-color: #0c0907;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .pixel-showcase-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .pixel-showcase-label {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      color: var(--gold-accent);
+      text-transform: uppercase;
+    }
+    .pixel-showcase-sub {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-top: 6px;
+    }
+
+    /* Full 1024x88 Banner View matching upload */
+    .exact-image-container {
+      width: 100%;
+      max-width: 1024px;
+      margin: 0 auto;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      border: 1px solid rgba(220, 200, 180, 0.15);
+      position: relative;
+    }
+    .exact-image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Brand Grid Cards */
+    .brands-directory {
+      max-width: 1240px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+    .directory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .brand-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-card:hover {
+      border-color: var(--gold-accent);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+    .brand-card-logo-wrap {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      width: 100%;
+      background: #ebe1d7;
+      border-radius: 3px;
+      padding: 10px;
+    }
+    .brand-card-logo-wrap img {
+      max-height: 48px;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .brand-card-name {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      color: var(--text-ivory);
+      margin-bottom: 8px;
+    }
+    .brand-card-origin {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--gold-accent);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .brand-card-bio {
+      font-size: 13px;
+      color: var(--text-taupe);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .btn-explore-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      color: var(--gold-accent);
+      text-transform: uppercase;
+      border: 1px solid rgba(194, 170, 143, 0.4);
+      padding: 8px 18px;
+      border-radius: 2px;
+      transition: all 0.25s ease;
+    }
+    .btn-explore-brand:hover {
+      background: var(--gold-accent);
+      color: #0a0806;
+      border-color: var(--gold-accent);
+    }
+
+    /* Comparison Slider / Toggle Bar */
+    .toggle-bar-controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .toggle-pill {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--border-bronze);
+      color: var(--text-taupe);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .toggle-pill.active, .toggle-pill:hover {
+      background: var(--gold-accent);
+      color: #0a0806;
+      border-color: var(--gold-accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="sofia-navbar" style="position: relative; background: #0c0907; border-bottom: 1px solid var(--border-subtle);">
+    <div class="nav-brand">
+      <a href="index.html" class="brand-text">Sofia</a>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="index.html#marketplace" class="nav-link">Marketplace</a></li>
+      <li><a href="brands.html" class="nav-link" style="color: var(--gold-accent);">Brands</a></li>
+      <li><a href="index.html#services" class="nav-link">Services</a></li>
+      <li><a href="index.html#about" class="nav-link">About</a></li>
+    </ul>
+    <div class="nav-utilities">
+      <a href="index.html" class="util-btn" style="font-size: 11px; letter-spacing: 1.5px; color: var(--gold-accent); display: flex; align-items: center; gap: 6px;">
+        &larr; BACK TO HOME
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="brands-page-hero">
+    <span class="brands-page-tag">MANUFACTURE DIRECTORY</span>
+    <h1 class="brands-page-title">The World's Most Prestigious Maisons</h1>
+    <p class="brands-page-desc">
+      Every timepiece in Sofia's global marketplace comes from one of horology's most revered manufacturers. 
+      Independently verified, authenticated, and cataloged to the highest standards.
+    </p>
+
+    <div class="toggle-bar-controls">
+      <button class="toggle-pill active" onclick="switchView('vector')">Master Vector SVG (1024x58)</button>
+      <button class="toggle-pill" onclick="switchView('full')">Full Viewport Strip (1024x88)</button>
+    </div>
+  </header>
+
+  <!-- PIXEL-PERFECT REPRODUCTION VIEWER -->
+  <section class="pixel-showcase-section">
+    <div class="pixel-showcase-header">
+      <span class="pixel-showcase-label">PIXEL-PERFECT VECTOR SVG STRIP</span>
+      <p class="pixel-showcase-sub">Exact vector reproduction matching every typographic detail, coronet, cross, and divider in pure SVG.</p>
+    </div>
+
+    <!-- Active View Display -->
+    <div class="exact-image-container" id="brandStripContainer">
+      <img src="brands-strip.svg" alt="Sofia Luxury Brands Vector Banner" id="displayStrip" />
+    </div>
+
+    <!-- Interactive SVG Strip Underneath -->
+    <div style="margin-top: 30px;">
+      <section class="sofia-brands-strip-section" style="box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+        <div class="brands-strip-wrapper">
+          <div class="brands-strip-inner brands-svg-bar">
+            <!-- 1. ROLEX -->
+            <a href="#rolex-sec" class="brand-strip-link brand-link-rolex" title="Rolex — Geneva">
+              <i class="ibio-rolex" aria-label="Rolex"></i>
+            </a>
+            <span class="brand-hairline-divider" aria-hidden="true"></span>
+
+            <!-- 2. PATEK PHILIPPE -->
+            <a href="#patek-sec" class="brand-strip-link brand-link-patek" title="Patek Philippe Genève">
+              <i class="ibio-patek-philippe" aria-label="Patek Philippe Genève"></i>
+            </a>
+            <span class="brand-hairline-divider" aria-hidden="true"></span>
+
+            <!-- 3. AUDEMARS PIGUET -->
+            <a href="#ap-sec" class="brand-strip-link brand-link-ap" title="Audemars Piguet — Le Brassus">
+              <i class="ibio-audemars-piguet" aria-label="Audemars Piguet"></i>
+            </a>
+            <span class="brand-hairline-divider" aria-hidden="true"></span>
+
+            <!-- 4. CARTIER -->
+            <a href="#cartier-sec" class="brand-strip-link brand-link-cartier" title="Cartier — Paris">
+              <i class="ibio-cartier" aria-label="Cartier"></i>
+            </a>
+            <span class="brand-hairline-divider" aria-hidden="true"></span>
+
+            <!-- 5. OMEGA -->
+            <a href="#omega-sec" class="brand-strip-link brand-link-omega" title="Omega — Biel/Bienne">
+              <i class="ibio-omega" aria-label="Omega"></i>
+            </a>
+            <span class="brand-hairline-divider" aria-hidden="true"></span>
+
+            <!-- 6. IWC SCHAFFHAUSEN -->
+            <a href="#iwc-sec" class="brand-strip-link brand-link-iwc" title="IWC Schaffhausen">
+              <i class="ibio-iwc" aria-label="IWC Schaffhausen"></i>
+            </a>
+            <span class="brand-hairline-divider" aria-hidden="true"></span>
+
+            <!-- 7. VACHERON CONSTANTIN -->
+            <a href="#vacheron-sec" class="brand-strip-link brand-link-vacheron" title="Vacheron Constantin">
+              <i class="ibio-vacheron-constantin" aria-label="Vacheron Constantin"></i>
+            </a>
+            <span class="brand-hairline-divider" aria-hidden="true"></span>
+
+            <!-- 8. VIEW ALL BRANDS -->
+            <a href="#brands-all" class="brand-strip-link brand-link-view-all" title="View All Watch Brands">
+              <i class="ibio-view-all" aria-label="View All Brands"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- DIRECTORY OF THE 7 LUXURY MAISONS -->
+  <main class="brands-directory" id="brands-all">
+    <div class="section-title-wrap" style="text-align: center; margin-bottom: 40px;">
+      <span class="section-kicker">CURATED HOUSES</span>
+      <h2 class="section-title">The Seven Iconic Horological Houses</h2>
+      <div class="title-accent-line" style="margin: 14px auto;"></div>
+    </div>
+
+    <div class="directory-grid">
+      <!-- 1. ROLEX -->
+      <article class="brand-card" id="rolex-sec">
+        <div class="brand-card-logo-wrap">
+          <i class="ibio-rolex" style="transform: scale(1.3);"></i>
+        </div>
+        <h3 class="brand-card-name">Rolex</h3>
+        <span class="brand-card-origin">Geneva, Switzerland · Est. 1905</span>
+        <p class="brand-card-bio">
+          Synonymous with unyielding durability and timeless prestige. From the fluted bezel Datejust to the iconic Submariner and Daytona chronographs.
+        </p>
+        <a href="index.html#marketplace" class="btn-explore-brand">Browse Rolex &rarr;</a>
+      </article>
+
+      <!-- 2. PATEK PHILIPPE -->
+      <article class="brand-card" id="patek-sec">
+        <div class="brand-card-logo-wrap">
+          <i class="ibio-patek-philippe" style="transform: scale(1.3);"></i>
+        </div>
+        <h3 class="brand-card-name">Patek Philippe</h3>
+        <span class="brand-card-origin">Geneva, Switzerland · Est. 1839</span>
+        <p class="brand-card-bio">
+          The pinnacle of grand complications, perpetual calendars, and the legendary Nautilus and Aquanaut sports luxury references.
+        </p>
+        <a href="index.html#marketplace" class="btn-explore-brand">Browse Patek &rarr;</a>
+      </article>
+
+      <!-- 3. AUDEMARS PIGUET -->
+      <article class="brand-card" id="ap-sec">
+        <div class="brand-card-logo-wrap">
+          <i class="ibio-audemars-piguet" style="transform: scale(1.2);"></i>
+        </div>
+        <h3 class="brand-card-name">Audemars Piguet</h3>
+        <span class="brand-card-origin">Le Brassus, Switzerland · Est. 1875</span>
+        <p class="brand-card-bio">
+          Masters of avant-garde haute horlogerie and home of the legendary octagonal Royal Oak designed by Gérald Genta.
+        </p>
+        <a href="index.html#marketplace" class="btn-explore-brand">Browse AP &rarr;</a>
+      </article>
+
+      <!-- 4. CARTIER -->
+      <article class="brand-card" id="cartier-sec">
+        <div class="brand-card-logo-wrap">
+          <i class="ibio-cartier" style="transform: scale(1.3);"></i>
+        </div>
+        <h3 class="brand-card-name">Cartier</h3>
+        <span class="brand-card-origin">Paris, France · Est. 1847</span>
+        <p class="brand-card-bio">
+          The Jeweler of Kings and King of Jewelers. Iconic shaped watches including the Santos, Tank Louis, and Crash.
+        </p>
+        <a href="index.html#marketplace" class="btn-explore-brand">Browse Cartier &rarr;</a>
+      </article>
+
+      <!-- 5. OMEGA -->
+      <article class="brand-card" id="omega-sec">
+        <div class="brand-card-logo-wrap">
+          <i class="ibio-omega" style="transform: scale(1.3);"></i>
+        </div>
+        <h3 class="brand-card-name">Omega</h3>
+        <span class="brand-card-origin">Biel/Bienne, Switzerland · Est. 1848</span>
+        <p class="brand-card-bio">
+          Pioneering precision from the depths of the ocean to the Moon. Home of the Speedmaster Professional and Seamaster Co-Axial Master Chronometers.
+        </p>
+        <a href="index.html#marketplace" class="btn-explore-brand">Browse Omega &rarr;</a>
+      </article>
+
+      <!-- 6. IWC SCHAFFHAUSEN -->
+      <article class="brand-card" id="iwc-sec">
+        <div class="brand-card-logo-wrap">
+          <i class="ibio-iwc" style="transform: scale(1.3);"></i>
+        </div>
+        <h3 class="brand-card-name">IWC Schaffhausen</h3>
+        <span class="brand-card-origin">Schaffhausen, Switzerland · Est. 1868</span>
+        <p class="brand-card-bio">
+          Precision engineering meets Swiss craftsmanship. Legendary for Pilot's Watches, Portugieser, and perpetual calendar masterpieces.
+        </p>
+        <a href="index.html#marketplace" class="btn-explore-brand">Browse IWC &rarr;</a>
+      </article>
+
+      <!-- 7. VACHERON CONSTANTIN -->
+      <article class="brand-card" id="vacheron-sec">
+        <div class="brand-card-logo-wrap">
+          <i class="ibio-vacheron-constantin" style="transform: scale(1.2);"></i>
+        </div>
+        <h3 class="brand-card-name">Vacheron Constantin</h3>
+        <span class="brand-card-origin">Geneva, Switzerland · Est. 1755</span>
+        <p class="brand-card-bio">
+          The oldest continuously operating watch manufacturer in the world. Revered for the Overseas collection and Historiques American 1921.
+        </p>
+        <a href="index.html#marketplace" class="btn-explore-brand">Browse Vacheron &rarr;</a>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer" style="background: #070504; border-top: 1px solid var(--border-subtle); padding: 40px 20px; text-align: center; color: var(--text-dim); font-size: 12px;">
+    <p>&copy; 2026 Sofia Luxury Timepieces Group. All trademarks, logos, and brand names are the property of their respective owners.</p>
+    <p style="margin-top: 8px;"><a href="index.html" style="color: var(--gold-accent);">Return to Main Landing Page</a></p>
+  </footer>
+
+  <script>
+    function switchView(type) {
+      const img = document.getElementById('displayStrip');
+      const pills = document.querySelectorAll('.toggle-pill');
+      pills.forEach(p => p.classList.remove('active'));
+      
+      if (type === 'full') {
+        img.src = 'brands-bar.jpg';
+        pills[1].classList.add('active');
+      } else {
+        img.src = 'brands-strip.svg';
+        pills[0].classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
